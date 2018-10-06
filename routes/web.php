@@ -20,12 +20,27 @@ Route::get('/home', 'Adm\AdminController@admin')->name('home');
 //EMPRESAS
 Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 
+//LA RED
+Route::get('/lared', 'PaginasController@red')->name('red');
+
+//MISION
+Route::get('/mision', 'PaginasController@mision')->name('mision');
+
+//BIBLIOTECA
+Route::get('/biblioteca', 'PaginasController@biblioteca')->name('biblioteca');
+// Rutas de reportes pdf desde la web
+    Route::get('pdf/{id}', ['uses' => 'PaginasController@downloadPdf', 'as' => 'file-pdf']);
+
+
 //CONTACTO
 Route::get('/contacto', 'PaginasController@contacto')->name('contacto');
 Route::post('enviar-mailcontacto', [
     'uses' => 'PaginasController@enviarmailcontacto',
     'as'   => 'enviarmailcontacto',
 ]);
+
+//ORGANIZMOS ASOCIADOS
+Route::get('/clientes', 'PaginasController@clientes')->name('clientes');
 
 //BUSCADOR
 Route::post('productos/buscar', [
@@ -60,6 +75,14 @@ Route::post('productos/buscar', [
         'as'   => 'imgempresa.destroy',
     ]);
 
+    /*------------CLIENTES----------------*/
+    Route::resource('clientes', 'adm\ClientesController');
+    Route::delete('clientes/{id}/destroy', [
+        'uses' => 'adm\ClientesController@destroy',
+        'as'   => 'clientes.destroy',
+
+    ]);
+
     /*------------SLIDERS----------------*/
     Route::resource('sliders', 'Adm\SlidersController');
 
@@ -71,6 +94,12 @@ Route::post('productos/buscar', [
 
     /*------------Contenido la red----------------*/
     Route::resource('contenido_red', 'Adm\ContenidoRedController'); 
+
+    /*------------Contenido mision----------------*/
+    Route::resource('mision', 'Adm\MisionController'); 
+
+    /*------------Contenido biblioteca----------------*/
+    Route::resource('biblioteca', 'Adm\BibliotecaController'); 
 
     /*------------CARGOS----------------*/
     Route::resource('cargos', 'Adm\CargosController'); 

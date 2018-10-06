@@ -18,7 +18,7 @@
 
 .nombre_empresa{
   font-size: 32px;
-    color: #806EA8;
+    color: #D8212A;
     font-family: 'Asap';
     font-weight: 400;
 }
@@ -31,6 +31,7 @@
 
 .toptab{
   margin-top: 4.5%;
+      margin-bottom: 69px!important;
 }
 
 .estadisticas{
@@ -38,6 +39,22 @@
 }
 
 .contenido_empresa{
-    font-size: 17px;
+    font-size: 20px;
     color: #5F5F5F;
+}
+
+.imagen_lared img{
+  margin-top: 15%; 
+}
+
+.imagen_lared img{ 
+  height: 350px;
+}
+
+.linea_titulo{
+      background-color: #D8212A;
+    color: #D8212A;
+    height: 2px;
+    border: none;
+    border-radius: 3px;
 }

@@ -52,7 +52,7 @@
                             </a>
                             <ul style="margin-top: -16%!important;">
                                 <li class="menu_cate">
-                                    <a href="" style="padding-top: 5%;">
+                                    <a href="{{ url('/lared') }}" style="padding-top: 5%;">
                                         Que es la Red?
                                     </a>
                                 </li>
@@ -62,12 +62,12 @@
                                     </a>
                                 </li>
                                 <li class="menu_cate">
-                                    <a href="" style="padding-top: 5%;">
+                                    <a href="{{ url('/mision') }}" style="padding-top: 5%;">
                                         Misión
                                     </a>
                                 </li>
                                 <li class="menu_cate">
-                                    <a href="" style="padding-top: 5%;">
+                                    <a href="{{ url('/clientes') }}" style="padding-top: 5%;">
                                         Organizmos Asociados
                                     </a>
                                 </li>
@@ -102,13 +102,13 @@
                             @endif
                             @if($activo=='impresion')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/biblioteca') }}">
                                     Biblioteca
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/biblioteca') }}">
                                     Biblioteca
                                 </a>
                             </li>

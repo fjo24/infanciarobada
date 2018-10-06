@@ -22,13 +22,25 @@
 @endif
 <div class="row">
     <div class="col s12">
-        {!!Form::model($homes, ['route'=>['contenidoredes.update',$homes->id], 'method'=>'PUT', 'files' => true])!!}
+        {!!Form::model($homes, ['route'=>['contenido_red.update',$homes->id], 'method'=>'PUT', 'files' => true])!!}
         <div class="row">
             <div class="input-field col l6 s12">
                 {!!Form::label('nombre:')!!}
 						{!!Form::text('nombre', null , ['class'=>''])!!}
             </div>
         </div>
+        <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Imagen 
+                    </span>
+                    {!! Form::file('imagen') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('imagen',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 411px - 411px')!!}
+                </div>
+            </div>
         <div class="row">
             <div class="col s12">
                 <label class="col l12 s12" for="parrafo">

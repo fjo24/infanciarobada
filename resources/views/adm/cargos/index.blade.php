@@ -1,6 +1,6 @@
 @extends('adm.layouts.frame')
 
-@section('titulo', 'Sistemas de productos')
+@section('titulo', 'Lista de cargos')
 
 @section('contenido')
 	    @if(count($errors) > 0)
@@ -26,30 +26,24 @@
                 <td>
                     Nombre
                 </td>
-                <td>
-                    Orden
-                </td>
                 <td class="text-right">
                     Acciones
                 </td>
             </thead>
             <tbody>
-                @foreach($categorias as $categoria)
+                @foreach($cargos as $cargo)
                 <tr>
                     <td>
-                        {!!$categoria->nombre!!}
-                    </td>
-                    <td>
-                        {!!$categoria->orden!!}
+                        {!!$cargo->nombre!!}
                     </td>
                     <td class="text-right">
-                        <a href="{{ route('categorias.edit',$categoria->id)}}">
+                        <a href="{{ route('cargos.edit',$cargo->id)}}">
                             <i class="material-icons">
                                 create
                             </i>
                         </a>
-                        {!!Form::open(['class'=>'en-linea', 'route'=>['categorias.destroy', $categoria->id], 'method' => 'DELETE'])!!}
-                        <button class="submit-button" onclick="return confirm('¿Realmente deseas borrar la categoria?')" type="submit">
+                        {!!Form::open(['class'=>'en-linea', 'route'=>['cargos.destroy', $cargo->id], 'method' => 'DELETE'])!!}
+                        <button class="submit-button" onclick="return confirm('¿Realmente deseas borrar el cargo?')" type="submit">
                             <i class="material-icons red-text">
                                 cancel
                             </i>
@@ -61,7 +55,7 @@
             </tbody>
         </table>
         <br>
-        <a href="{{ route('categorias.create') }}">
+        <a href="{{ route('cargos.create') }}">
             <div class="col l12 s12 no-padding" href="">
                 <button class="boton btn-large right" name="action" type="submit">
                     Nuevo

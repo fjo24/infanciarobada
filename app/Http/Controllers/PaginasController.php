@@ -7,11 +7,14 @@ use App\Slider;
 use App\Dato;
 use App\Banner;
 use App\Empresa;
-use App\Contenido_quiero;
+use App\Contenido_red;
 use Illuminate\Support\Facades\Mail;
 use App\Imgempresa;
 use App\Categoria;
+use App\Mision;
+use App\Biblioteca;
 use App\Destacado_home;
+use App\Cliente;
 
 class PaginasController extends Controller
 {
@@ -25,13 +28,47 @@ class PaginasController extends Controller
         return view('pages.home', compact('home', 'sliders', 'activo', 'productos', 'ready', 'noticias', 'categorias'));
     }
 
-    public function empresa()
+    public function red()
     {
-        $activo    = 'empresa';
-        $empresa = Empresa::all()->first();
-        $banner = Banner::Where('seccion', 'empresa')->first();
+        $activo    = 'lared';
+        $lared = Contenido_red::all()->first();
+       // $banner = Banner::Where('seccion', 'empresa')->first();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.empresa', compact('empresa', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.lared', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function biblioteca()
+    {
+        $activo    = 'biblioteca';
+        $novedades = Biblioteca::orderBy('orden', 'ASC')->get();
+       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
+        return view('pages.biblioteca', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function downloadPdf($id)
+    {
+        $biblioteca = Biblioteca::find($id);
+        $path     = public_path();
+        $url      = $path . '/' . $biblioteca->pdf;
+        return response()->download($url);
+        return redirect()->route('biblioteca.index');
+    }
+
+    public function mision()
+    {
+        $activo    = 'mision';
+        $lared = Mision::all()->first();
+       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
+        return view('pages.mision', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function clientes()
+    {
+        $activo    = 'lared';
+        $clientes = Cliente::orderBy('orden', 'ASC')->get();
+        return view('pages.clientes', compact('clientes', 'activo'));
     }
 
     public function productos($id)

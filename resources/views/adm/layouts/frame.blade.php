@@ -154,6 +154,28 @@
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
+                                thumb_up
+                            </i>
+                            Organizmos Asociados
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('clientes.create')}}">
+                                        Registrar Organizmo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('clientes.index')}}">
+                                        Editar Organizmo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
                                 compare_arrows
                             </i>
                             Banners
@@ -182,46 +204,9 @@
                                         ¿Que es la Red?
                                     </a>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold">
-                        <a class="collapsible-header waves-effect waves-admin">
-                            <i class="material-icons">
-                                watch
-                            </i>
-                            Productos
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
                                 <li>
-                                    <a href="{{route('productos.create')}}">
-                                        Crear Producto
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('productos.index')}}">
-                                        Editar Producto
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('categorias.create')}}">
-                                        Crear Categoria
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('categorias.index')}}">
-                                        Editar Categoria
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('modelos.create')}}">
-                                        Crear Modelo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('modelos.index')}}">
-                                        Editar Modelo
+                                    <a href="{{route('mision.create')}}">
+                                        Mision
                                     </a>
                                 </li>
                             </ul>
@@ -230,22 +215,20 @@
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
-                                library_books
+                                home
                             </i>
-                            Lista de precios
+                            Biblioteca
                         </a>
                         <div class="collapsible-body">
                             <ul>
-                                <!--
                                 <li>
-                                    <a href="{{route('catalogos.create')}}">
-                                        Agregar Catalogo
+                                    <a href="{{route('biblioteca.create')}}">
+                                        Crear Biblioteca
                                     </a>
                                 </li>
-                            -->
                                 <li>
-                                    <a href="{{route('catalogos.index')}}">
-                                        Editar Lista de precios
+                                    <a href="{{route('biblioteca.index')}}">
+                                        Listado/Editar Biblioteca
                                     </a>
                                 </li>
                             </ul>

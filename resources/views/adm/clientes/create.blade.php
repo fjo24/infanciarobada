@@ -1,9 +1,11 @@
 @extends('adm.layouts.frame')
 
-@section('titulo', 'Sistemas de productos')
+@section('titulo', 'Crear Cliente')
 
 @section('contenido')
-		@if(count($errors) > 0)
+
+
+	    @if(count($errors) > 0)
 <div class="col s12 card-panel red lighten-4 red-text text-darken-4">
     <ul>
         @foreach($errors->all() as $error)
@@ -21,36 +23,38 @@
 @endif
 <div class="row">
     <div class="col s12">
-        {!!Form::open(['route'=>'categorias.store', 'method'=>'POST', 'files' => true])!!}
+        {!!Form::open(['route'=>'clientes.store', 'method'=>'POST', 'files' => true])!!}
         <div class="row">
             <div class="input-field col l6 s12">
-                {!!Form::label('Nombre:')!!}
-						{!!Form::text('nombre', null , ['class'=>'', 'required'])!!}
+                {!!Form::label('nombre:')!!}
+						{!!Form::text('nombre', null , ['class'=>''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('link:')!!}
+						{!!Form::text('link', null , ['class'=>''])!!}
             </div>
             <div class="input-field col l6 s12">
                 {!!Form::label('orden:')!!}
-						{!!Form::text('orden', null , ['class'=>'', 'required'])!!}
-            </div>
-            <div class="input-field col l12 m12 s12">
-                {!!Form::label('Descripción:')!!}
-                        {!!Form::text('descripcion', null , ['class'=>'', 'required'])!!}
+						{!!Form::text('orden', null , ['class'=>''])!!}
             </div>
             <div class="file-field input-field col l6 s12">
                 <div class="btn">
                     <span>
-                        Banner
+                        Imagen
                     </span>
-                    {!! Form::file('banner') !!}
+                    {!! Form::file('imagen') !!}
                 </div>
                 <div class="file-path-wrapper">
-                    {!! Form::text('banner',null, ['class'=>'file-path']) !!}
-                    {!!Form::label('Recomendado: 1400px - 163px')!!}
+                    {!! Form::text('imagen',null, ['class'=>'file-path ']) !!}
                 </div>
             </div>
         </div>
         <div class="col l12 s12 no-padding">
-            <button class="boton btn-large right" name="action" type="submit">
+            <button class="btn-large waves-effect waves-light red right" name="action" type="submit">
                 Crear
+                <i class="material-icons right">
+                    send
+                </i>
             </button>
         </div>
         {!!Form::close()!!}
@@ -59,9 +63,8 @@
 @endsection
 @section('js')
 <script type="text/javascript">
-$(document).ready(function(){
+    $(document).ready(function(){
     $('select').formSelect();
   });
-
 </script>
 @endsection
