@@ -32,10 +32,10 @@
                     {!! $novedad->descripcion !!}
                 </div>
                 <div class="flecha">
-    <a href="{{ route('file-pdf', ['post' => $novedad->id])}}">
+<a href="{{ route('noticiainfo', $novedad->id)}}">
                     <img class="responsive-img" src="{{ asset("/img/descarga.png") }}"/>
                     <span class="ver">
-                    DESCARGAR
+                    VER MÁS
                     </span>
                 </a>
                 </div>

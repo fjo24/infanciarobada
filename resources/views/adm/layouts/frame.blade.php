@@ -156,18 +156,40 @@
                             <i class="material-icons">
                                 thumb_up
                             </i>
-                            Organizmos Asociados
+                            Organismos Asociados
                         </a>
                         <div class="collapsible-body">
                             <ul>
                                 <li>
                                     <a href="{{route('clientes.create')}}">
-                                        Registrar Organizmo
+                                        Registrar Organismo
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{route('clientes.index')}}">
-                                        Editar Organizmo
+                                        Editar Organismo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                thumb_up
+                            </i>
+                            Foros
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('foros.create')}}">
+                                        Registrar Foro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('foros.index')}}">
+                                        Editar Foro
                                     </a>
                                 </li>
                             </ul>
@@ -207,6 +229,50 @@
                                 <li>
                                     <a href="{{route('mision.create')}}">
                                         Mision
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                home
+                            </i>
+                            Noticias
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('noticias.create')}}">
+                                        Crear Noticia
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('noticias.index')}}">
+                                        Listado/Editar Noticia
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                home
+                            </i>
+                            Eventos
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('eventos.create')}}">
+                                        Crear Evento
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('eventos.index')}}">
+                                        Listado/Editar Evento
                                     </a>
                                 </li>
                             </ul>

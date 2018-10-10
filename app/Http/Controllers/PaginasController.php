@@ -7,12 +7,17 @@ use App\Slider;
 use App\Dato;
 use App\Banner;
 use App\Empresa;
+use App\Noticia;
+use App\Imgnoticia;
+use App\Evento;
+use App\Imgevento;
 use App\Contenido_red;
 use Illuminate\Support\Facades\Mail;
 use App\Imgempresa;
 use App\Categoria;
 use App\Mision;
 use App\Biblioteca;
+use App\Foro;
 use App\Destacado_home;
 use App\Cliente;
 
@@ -32,7 +37,7 @@ class PaginasController extends Controller
     {
         $activo    = 'lared';
         $lared = Contenido_red::all()->first();
-       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $banner = Banner::Where('seccion', 'empresa')->first();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
         return view('pages.lared', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
     }
@@ -41,9 +46,52 @@ class PaginasController extends Controller
     {
         $activo    = 'biblioteca';
         $novedades = Biblioteca::orderBy('orden', 'ASC')->get();
-       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $banner = Banner::Where('seccion', 'empresa')->first();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
         return view('pages.biblioteca', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function eventos()
+    {
+        $activo    = 'eventos';
+        $novedades = Evento::orderBy('orden', 'ASC')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
+        return view('pages.eventos', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function eventoinfo($id)
+    {
+        $activo    = 'eventos';
+        $empresa = Evento::find($id);
+       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $imagenes   = Imgevento::orderBy('id', 'ASC')->Where('evento_id', $id)->get();
+        return view('pages.eventoinfo', compact('empresa', 'activo', 'imagenes', 'banner'));
+    }
+
+    public function noticias()
+    {
+        $activo    = 'noticias';
+        $novedades = Noticia::orderBy('orden', 'ASC')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.noticias', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function foros()
+    {
+        $activo = 'foros';
+        $mapas  = Foro::OrderBy('nombre', 'ASC')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.foros', compact('mapas', 'activo', 'banner'));
+    }
+
+    public function noticiainfo($id)
+    {
+        $activo    = 'noticias';
+        $empresa = Noticia::find($id);
+       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $imagenes   = Imgnoticia::orderBy('id', 'ASC')->Where('noticia_id', $id)->get();
+        return view('pages.noticiainfo', compact('empresa', 'activo', 'imagenes', 'tiempos', 'banner'));
     }
 
     public function downloadPdf($id)
@@ -59,7 +107,7 @@ class PaginasController extends Controller
     {
         $activo    = 'mision';
         $lared = Mision::all()->first();
-       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $banner = Banner::Where('seccion', 'empresa')->first();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
         return view('pages.mision', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
     }
@@ -68,7 +116,8 @@ class PaginasController extends Controller
     {
         $activo    = 'lared';
         $clientes = Cliente::orderBy('orden', 'ASC')->get();
-        return view('pages.clientes', compact('clientes', 'activo'));
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.clientes', compact('clientes', 'activo', 'banner'));
     }
 
     public function productos($id)

@@ -6,6 +6,15 @@
 <link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet">
 @endsection
 @section('contenido')
+<div class="seccion-banner" style="background: url(/{!! $banner->imagen !!});">
+    <div class="btexto">
+        <div class="tbanner">
+            <i>
+                {!! $banner->texto1 !!}
+            </i>
+        </div>
+    </div>
+</div>
     <div class="container" style="width: 90%">
         <div class="row toptab">
             <div class="col s12 m7 l7">

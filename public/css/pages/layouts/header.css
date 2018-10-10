@@ -1,6 +1,13 @@
 *{
     font-family: 'Titillium Web'!important;
 }
+
+nav ul a:hover {
+    background-color: transparent!important;
+    font-family: Titillium Web;
+    border-bottom: 3px solid #D8212A !important;
+}
+
 header{
     height: 170px;
 }
@@ -33,8 +40,7 @@ header .principal {
 }
 
 .activo{
-    border-bottom: 2px solid #727175;
-    height: 120%;
+    border-bottom: 3px solid #D8212A;
 }
 
 nav ul a:hover {

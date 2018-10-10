@@ -29,7 +29,7 @@
                                     <img alt="" class="img_logo" src="{{asset('img/layouts/telefono.png')}}"/>
                                 </li>
                                 <li class="items_head">
-                                    <a href="{{ url('/contacto') }}">
+                                    <a href="">
                                        {{$telefono->descripcion}}
                                     </a>
                                 </li>
@@ -74,33 +74,33 @@
                             </ul>
                         </li>
                             @endif
-                                @if($activo=='productos')
+                                @if($activo=='foros')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/quiero') }}" style="">
+                                <a class="activo" href="{{ url('/foros') }}" style="">
                                     Foros
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="" style="">
+                                <a href="{{ url('/foros') }}" style="">
                                     Foros
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='medida')
+                            @if($activo=='noticias')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/noticias') }}">
                                     Noticias
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/noticias') }}">
                                     Noticias
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='impresion')
+                            @if($activo=='biblioteca')
                             <li class="items_header">
                                 <a class="activo" href="{{ url('/biblioteca') }}">
                                     Biblioteca
@@ -115,65 +115,65 @@
                             @endif
                             @if($activo=='novedades')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="">
                                     Escuela
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="">
                                     Escuela
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='contacto')
+                            @if($activo=='eventos')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="{{ url('/eventos') }}">
                                     Eventos
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="{{ url('/eventos') }}">
                                     Eventos
                                 </a>
                             </li>
                             @endif
                             @if($activo=='contacto')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="">
                                     Web Mail
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="">
                                     Web Mail
                                 </a>
                             </li>
                             @endif
                             @if($activo=='contacto')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="">
                                     Sobrevivientes
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="">
                                     Sobrevivientes
                                 </a>
                             </li>
                             @endif
                             @if($activo=='contacto')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/contacto') }}">
+                                <a class="activo" href="">
                                     Contacto
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="{{ url('/contacto') }}">
+                                <a href="">
                                     Contacto
                                 </a>
                             </li>

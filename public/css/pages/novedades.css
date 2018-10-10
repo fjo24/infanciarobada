@@ -1,18 +1,3 @@
-nav ul a {
-    color: #7D0045!important;
-    font-size: 16px!important;
-    font-family: arial;
-    margin: 0 12px;
-    padding: 0!important;
-}
-
-nav ul a:hover {
-    background-color: transparent!important;
-    font-family: arial;
-    margin: 0 12px;
-    padding: 0!important;
-    border-bottom: 3px solid #7D0045 !important;
-}
 .itemsnov .activado {
     background-color: transparent!important;
     font-family: arial;

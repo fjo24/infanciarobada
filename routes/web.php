@@ -20,6 +20,32 @@ Route::get('/home', 'Adm\AdminController@admin')->name('home');
 //EMPRESAS
 Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 
+//NOTICIA
+Route::get('noticiainfo/{id}', 'PaginasController@noticiainfo')->name('noticiainfo');
+
+//EVENTO
+Route::get('eventoinfo/{id}', 'PaginasController@eventoinfo')->name('eventoinfo');
+//EMPRESAS
+Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
+
+/*------------Imagen----------------*/
+    Route::get('noticias/{noticia_id}/imagenes/', 'Adm\NoticiasController@imagenes')->name('imgnoticias.lista'); //index del modulo imagenes
+//agregar imagenes de seccion noticias
+    Route::post('noticias/{id}/imagen/', 'Adm\NoticiasController@nuevaimagen')->name('imgnoticias.nueva'); //es el store de las img de empresa
+    Route::delete('imgnoticias/{id}/destroy', [
+        'uses' => 'Adm\NoticiasController@destroyimg',
+        'as'   => 'imgnoticias.destroy',
+    ]);
+/*------------Imagen----------------*/
+    Route::get('eventos/{evento_id}/imagenes/', 'Adm\EventosController@imagenes')->name('imgeventos.lista'); //index del modulo imagenes
+//agregar imagenes de seccion eventos
+Route::post('eventos/{id}/imagen/', 'Adm\EventosController@nuevaimagen')->name('imgeventos.nueva'); //es el store de las img de empresa
+
+Route::delete('imgeventos/{id}/destroy', [
+        'uses' => 'Adm\EventosController@destroyimg',
+        'as'   => 'imgeventos.destroy',
+    ]);
+
 //LA RED
 Route::get('/lared', 'PaginasController@red')->name('red');
 
@@ -31,6 +57,11 @@ Route::get('/biblioteca', 'PaginasController@biblioteca')->name('biblioteca');
 // Rutas de reportes pdf desde la web
     Route::get('pdf/{id}', ['uses' => 'PaginasController@downloadPdf', 'as' => 'file-pdf']);
 
+//NOTICIAS
+Route::get('/noticias', 'PaginasController@noticias')->name('noticias');
+
+//EVENTOS
+Route::get('/eventos', 'PaginasController@eventos')->name('eventos');
 
 //CONTACTO
 Route::get('/contacto', 'PaginasController@contacto')->name('contacto');
@@ -41,6 +72,9 @@ Route::post('enviar-mailcontacto', [
 
 //ORGANIZMOS ASOCIADOS
 Route::get('/clientes', 'PaginasController@clientes')->name('clientes');
+
+//ORGANIZMOS ASOCIADOS
+Route::get('/foros', 'PaginasController@foros')->name('foros');
 
 //BUSCADOR
 Route::post('productos/buscar', [
@@ -76,10 +110,18 @@ Route::post('productos/buscar', [
     ]);
 
     /*------------CLIENTES----------------*/
-    Route::resource('clientes', 'adm\ClientesController');
+    Route::resource('clientes', 'Adm\ClientesController');
     Route::delete('clientes/{id}/destroy', [
-        'uses' => 'adm\ClientesController@destroy',
+        'uses' => 'Adm\ClientesController@destroy',
         'as'   => 'clientes.destroy',
+
+    ]);
+
+    /*------------FOROS----------------*/
+    Route::resource('foros', 'Adm\ForosController');
+    Route::delete('foros/{id}/destroy', [
+        'uses' => 'Adm\ForosController@destroy',
+        'as'   => 'foros.destroy',
 
     ]);
 
@@ -100,6 +142,12 @@ Route::post('productos/buscar', [
 
     /*------------Contenido biblioteca----------------*/
     Route::resource('biblioteca', 'Adm\BibliotecaController'); 
+
+    /*------------eventos----------------*/
+    Route::resource('eventos', 'Adm\EventosController'); 
+
+    /*------------noticias----------------*/
+    Route::resource('noticias', 'Adm\NoticiasController'); 
 
     /*------------CARGOS----------------*/
     Route::resource('cargos', 'Adm\CargosController'); 

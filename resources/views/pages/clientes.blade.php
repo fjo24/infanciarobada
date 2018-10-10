@@ -2,8 +2,18 @@
 @section('title', 'Excelsior - Consejos de Seguridad')
 @section('css')
 <link href="{{ asset('css/pages/clientes.css') }}" rel="stylesheet"/>
+<link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet"/>
 @endsection
 @section('contenido')
+<div class="seccion-banner" style="background: url(/{!! $banner->imagen !!});">
+    <div class="btexto">
+        <div class="tbanner">
+            <i>
+                {!! $banner->texto1 !!}
+            </i>
+        </div>
+    </div>
+</div>
 <div class="container" style="width: 85%;">
     <div class="row bloquecont center">
         <span class="titulo-cat">

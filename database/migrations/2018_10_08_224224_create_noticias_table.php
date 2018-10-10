@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBibliotecasTable extends Migration
+class CreateNoticiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBibliotecasTable extends Migration
      */
     public function up()
     {
-        Schema::create('bibliotecas', function (Blueprint $table) {
+        Schema::create('noticias', function (Blueprint $table) {
             $table->increments('id');
             $table->text('nombre');
             $table->text('descripcion');
+            $table->text('contenido')->nullable();
             $table->text('orden')->nullable();
             $table->string('pdf')->nullable();
             $table->string('imagen')->nullable();
@@ -31,6 +32,6 @@ class CreateBibliotecasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bibliotecas');
+        Schema::dropIfExists('noticias');
     }
 }

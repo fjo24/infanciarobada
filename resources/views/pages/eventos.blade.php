@@ -4,7 +4,7 @@
 
 @section('contenido')
 <link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet">
 <div class="seccion-banner" style="background: url(/{!! $banner->imagen !!});">
     <div class="btexto">
         <div class="tbanner">
@@ -16,8 +16,7 @@
 </div>
             <div class="container" style="width: 80%">
 @foreach($novedades as $novedad)
-    <div class="row">
-            
+    <div class="row">   
         <div class="contnovedad col l12 m12 s12">
             <div class="col l4 m4 s12" style="padding-left: 0px;">
                 <div class="imgnovedad"> 
@@ -32,12 +31,12 @@
                     {!! $novedad->descripcion !!}
                 </div>
                 <div class="flecha">
-    <a href="{{ route('file-pdf', ['post' => $novedad->id])}}">
-                    <img class="responsive-img" src="{{ asset("/img/descarga.png") }}"/>
-                    <span class="ver">
-                    DESCARGAR
-                    </span>
-                </a>
+                    <a href="{{ route('eventoinfo', $novedad->id)}}">
+                        <img class="responsive-img" src="{{ asset("/img/descarga.png") }}"/>
+                        <span class="ver">
+                        VER MÁS
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>

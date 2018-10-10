@@ -1,0 +1,275 @@
+#map{
+	height: 650px;
+	width: 100%;
+}
+
+.container-distribuidor{
+	width: 1155px;
+    height: 98px;
+	min-width: 800px;
+	position: absolute;
+	background-color: white;
+	z-index: 3;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 15px 15px 5px 15px;
+}
+
+.no-margin{
+	margin: 0;
+}
+
+.boton{
+	height: 36px;
+	width: auto;
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #5A462E;
+	border: 1px solid #5A462E;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 40px;
+	cursor: pointer;
+	transition: 0.3s;
+	margin-top: 15px;
+	background-color: #fff;
+	float: right;
+}
+
+.boton:hover{
+	background-color: #5A462E;
+	color: #FDF9EB;
+	transition: 0.3s;
+}
+
+.container-distribuidor i {
+    float: right;
+    line-height: 34px;
+    margin-top: 45px;
+    color: #604B33;
+    border: 1px solid #604B33;
+    border-right: none;
+    padding: 0 10px;
+}
+
+.titulos_input_direccion{
+
+    font-family: 'Hurme';
+    font-size: 15px!important;
+    font-weight: bold;
+        left: 19px!important;
+}
+
+.titulos_input_radio{
+    font-family: 'Hurme';
+    font-size: 15px!important;
+    font-weight: bold;
+    left: 74px!important;
+}
+
+.direccion_mapa{
+    background: white;
+    height: 31px!important;
+    width: 317px!important;
+    position: relative;
+    top: 11px;
+    left: 8px;
+}
+
+.radio_mapa{
+    background: white;
+    height: 31px!important;
+    width: 317px!important;
+    position: relative;
+    top: 11px;
+        right: -63px;
+}
+
+.boton_mapa {
+    height: 35px!important;
+    width: 185px;
+    top: 5px;
+    right: 221px;
+    background-color: white;
+    top: 23px;
+    right: -138px;
+    font-family: 'Hurme';
+    font-size: 18px;
+    border: 1px #CDAB8A solid;
+    color: #CDAB8A;
+}
+.boton_mapa:hover {
+    height: 35px!important;
+    width: 185px;
+    top: 5px;
+    right: 221px;
+    background-color: white;
+    top: 23px;
+    right: -138px;
+    font-family: 'Hurme';
+    font-size: 18px;
+    border: 1px #CDAB8A solid;
+    color: #CDAB8A;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #CDAB8A;
+    -webkit-box-shadow: 0 1px 0 0 #CDAB8A;
+    box-shadow: 0 1px 0 0 #CDAB8A;
+}
+.btn:hover, .btn-large:hover {
+    background-color: white!important;
+}
+
+.ver_mapa a img{
+	    position: relative;
+    left: 89%;
+}
+
+.ver_listado a img{
+	    position: relative;
+    left: 41%;
+}
+
+.tabla_mapa thead{
+	font-family: 'Hurme';
+    font-size: 22px;
+    color: #CEAB88!important;
+}
+
+.celda_nombre{
+    font-size: 16px;
+    font-family: 'Hurme';
+    color: white;
+}
+
+.celda_resto{
+    font-size: 16px;
+    color: #595959;
+    font-family: 'Hurme';
+    color: white;
+}
+
+table.bordered>thead>tr, table.bordered>tbody>tr {
+    border-bottom: 1px solid #3b3b3b!important;
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: transparent!important;
+}
+
+@media only screen and (max-width: 1050px){
+  .container-distribuidor {
+    width: 100%!important;
+    height: 8%;
+    min-width: 0;
+    position: absolute;
+    background-color: #FF608A;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 15px 5px 15px;
+
+
+}
+
+.direccion_mapa {
+    width: 100%!important;
+}
+
+.radio_mapa {
+    width: 100%!important;
+        right: 5%;
+}
+
+.boton_mapa {
+
+    top: 0%;
+    right: 8%;
+        margin-top: 14%;
+
+}
+
+.ver_mapa a img {
+    left: 65%;
+}
+
+.ver_listado a img {
+    position: relative;
+    left: 26%;
+}
+
+.titulos_input_direccion {
+    font-size: 11px!important;
+}
+
+.titulos_input_radio {
+    font-size: 13px!important;
+}
+
+}
+
+@media only screen and (max-width: 770px){
+  .container-distribuidor {
+    width: 100%!important;
+    height: 16%;
+    min-width: 0;
+    position: absolute;
+    background-color: #FF608A;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 15px 5px 15px;
+
+
+}
+
+@media only screen and (max-width: 700px){
+  .container-distribuidor {
+    width: 100%!important;
+    height: 26%;
+    min-width: 0;
+    position: absolute;
+    background-color: #FF608A;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 15px 5px 15px;
+
+
+}
+
+@media only screen and (max-width: 450px){
+  .container-distribuidor {
+    width: 100%!important;
+    height: 26%;
+    min-width: 0;
+    position: absolute;
+    background-color: #FF608A;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 15px 5px 15px;
+
+
+}
+
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    border: 1px solid #9e9e9e!important;
+}
+
+.titulo_foro{
+    font-size: 22px;
+    font-family: 'Titillium Web', sans-serif;
+        color: #D8212A;
+}
+
+.descripcion_foro{
+    font-size: 18px;
+    font-family: 'Titillium Web', sans-serif;
+        color: #D8212A;
+}
