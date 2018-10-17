@@ -8,6 +8,7 @@ use App\Dato;
 use App\Banner;
 use App\Empresa;
 use App\Noticia;
+use App\Sobreviviente;
 use App\Imgnoticia;
 use App\Evento;
 use App\Imgevento;
@@ -75,6 +76,22 @@ class PaginasController extends Controller
         $novedades = Noticia::orderBy('orden', 'ASC')->get();
         $banner = Banner::Where('seccion', 'empresa')->first();
         return view('pages.noticias', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function sobrevivientes()
+    {
+        $activo    = 'biblioteca';
+        $novedades = Sobreviviente::orderBy('orden', 'ASC')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.sobrevivientes', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+    }
+
+    public function sobrevivienteinfo($id)
+    {
+        $activo    = 'biblioteca';
+        $sobreviviente = Sobreviviente::find($id);
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.sobrevivienteinfo', compact('sobreviviente', 'activo', 'imagenes', 'tiempos', 'banner'));
     }
 
     public function foros()

@@ -102,16 +102,38 @@
                             @endif
                             @if($activo=='biblioteca')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/biblioteca') }}">
+                                <a class="activo" href="">
                                     Biblioteca
                                 </a>
                             </li>
                             @else
-                            <li class="items_header">
-                                <a href="{{ url('/biblioteca') }}">
-                                    Biblioteca
-                                </a>
-                            </li>
+                            <li class="items_header" id="menu_productos">
+                            <a class="prod_menu" href="">
+                                Biblioteca
+                            </a>
+                            <ul style="margin-top: -16%!important;">
+                                <li class="menu_cate">
+                                    <a href="{{ url('/biblioteca') }}" style="padding-top: 5%;">
+                                        Documentos
+                                    </a>
+                                </li>
+                                <li class="menu_cate">
+                                    <a href="{{ url('/biblioteca') }}" style="padding-top: 5%;">
+                                        Documentos
+                                    </a>
+                                </li>
+                                <li class="menu_cate">
+                                    <a href="{{ url('/biblioteca') }}" style="padding-top: 5%;">
+                                        Videos
+                                    </a>
+                                </li>
+                                <li class="menu_cate">
+                                    <a href="{{ url('/sobrevivientes') }}" style="padding-top: 5%;">
+                                        Testimonios
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                             @endif
                             @if($activo=='novedades')
                             <li class="items_header">
@@ -154,13 +176,13 @@
                             @endif
                             @if($activo=='contacto')
                             <li class="items_header">
-                                <a class="activo" href="">
+                                <a class="activo" href="{{ url('/sobrevivientes') }}">
                                     Sobrevivientes
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="">
+                                <a href="{{ url('/sobrevivientes') }}">
                                     Sobrevivientes
                                 </a>
                             </li>

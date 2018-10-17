@@ -8,7 +8,7 @@ body{
 	padding: 20px 40px;
 	border-radius: 3px;
 	background: #ebebeb;
-	border: 1px solid #806EA8;
+	border: 1px solid #AA0000;
 }
 
 main{
@@ -16,7 +16,7 @@ main{
 }
 
 .input-field .prefix.active{
-	color: #806EA8;
+	color: #AA0000;
 }
 
 .input-field .prefix.visited{
@@ -24,7 +24,7 @@ main{
 }
 
 .input-field .prefix{
-	color: #806EA8;
+	color: #AA0000;
 }
 
 .logo-login{

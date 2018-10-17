@@ -11,7 +11,7 @@
 
     <title>Panel de administración</title>
     
-    <link rel="icon" type="image/png" href=""/>
+    <link href="{{ asset('img/favicon.ico') }}" rel="icon" type=""/>
 
     <link rel="stylesheet" href="{{ asset('plugins/materialize/css/materialize.min.css') }}">
 
@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <button class="btn-large waves-effect waves-light purple right" name="action" type="submit">
+                    <button class="btn-large waves-effect waves-light right" name="action" type="submit" style="background-color: #AA0000;">
                         Entrar
                         <i class="material-icons right">
                             send

@@ -4,7 +4,6 @@
     border-bottom: 3px solid #7D0045 !important;
     color: #7D0045 !important;
     font-size: 32px!important;
-
     padding: 0!important;
         padding-bottom: 12px!important;
 }
@@ -63,7 +62,7 @@ nav {
     border: 1px solid #C9C9C9;
     /* width: 806px!important; */
     padding-left: 0px!important;
-    height: 278px;
+    height: 100%;
     margin-top: 81px;
 }
 
@@ -89,8 +88,6 @@ nav {
     font-family: 'Lato';
     font-weight: 400;
     font-size: 17px;
-    margin-right: 27px;
-    line-height: 28px;
 }
 
 .ver{

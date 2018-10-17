@@ -23,6 +23,12 @@ Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 //NOTICIA
 Route::get('noticiainfo/{id}', 'PaginasController@noticiainfo')->name('noticiainfo');
 
+//SOBREVIVIENTE
+Route::get('/sobrevivientes', 'PaginasController@sobrevivientes')->name('sobrevivientes');
+
+//SOBREVIVIENTEINFO
+Route::get('sobrevivienteinfo/{id}', 'PaginasController@sobrevivienteinfo')->name('sobrevivienteinfo');
+
 //EVENTO
 Route::get('eventoinfo/{id}', 'PaginasController@eventoinfo')->name('eventoinfo');
 //EMPRESAS
@@ -149,6 +155,9 @@ Route::post('productos/buscar', [
     /*------------noticias----------------*/
     Route::resource('noticias', 'Adm\NoticiasController'); 
 
+    /*------------sobrevivientes----------------*/
+    Route::resource('sobrevivientes', 'Adm\SobrevivientesController'); 
+
     /*------------CARGOS----------------*/
     Route::resource('cargos', 'Adm\CargosController'); 
 
@@ -158,6 +167,10 @@ Route::post('productos/buscar', [
 });
 
     //****************************************ZONA PRIVADA**************************************************************************************************************************************************
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

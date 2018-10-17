@@ -9,7 +9,7 @@
                             <title>
                                 Panel de administración - @yield('titulo')
                             </title>
-                            <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png"/>
+                            <link href="{{ asset('img/favicon.ico') }}" rel="icon" type=""/>
                             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
                                 <link href="{{ asset('plugins/materialize/css/materialize.min.css') }}" rel="stylesheet">
                                     <link href="{{ asset('css/admin/admin.css') }}" media="screen,projection" rel="stylesheet" type="text/css"/>
@@ -295,6 +295,16 @@
                                 <li>
                                     <a href="{{route('biblioteca.index')}}">
                                         Listado/Editar Biblioteca
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('sobrevivientes.create')}}">
+                                        Crear Sobreviviente
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('sobrevivientes.index')}}">
+                                        Listado/Editar Sobreviviente
                                     </a>
                                 </li>
                             </ul>
