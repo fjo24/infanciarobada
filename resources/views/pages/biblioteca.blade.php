@@ -20,7 +20,7 @@
 <div class="row novedad">
     <div class="col l12 m12 s12">
         <div class="" style="padding: 1%;background-color: #F5F5F5;    border: 1px solid #C9C9C9;">
-            <img class="imgnovedad responsive-img" src="{{ asset($novedad->imagen) }}" hspace="5" vspace="5" style="float: left;width: 30%;height: 60%;"/>
+            <img class="imgnovedad responsive-img" src="{{ asset($novedad->imagen) }}" hspace="5" vspace="5" style="float: left;width: 250px;height: 250px;"/>
             <div class="titulonovedad">
                 {!! $novedad->nombre !!}
             </div>

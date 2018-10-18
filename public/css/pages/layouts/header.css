@@ -8,6 +8,12 @@ nav ul a:hover {
     border-bottom: 3px solid #D8212A !important;
 }
 
+nav ul a:hover {
+    background-color: transparent!important;
+    font-family: Titillium Web;
+    /* border-bottom: 3px solid #D8212A !important; */
+}
+
 header{
     height: 170px;
 }
@@ -34,6 +40,13 @@ header .principal {
     font-size: 17px;
 }
 
+.items_head a:hover{
+    color: #727172;
+    font-weight: 600;
+    font-size: 17px;
+    border-bottom: none!important;
+}
+
 .items_header a{
     color: #727174;
     font-size: 18px;
@@ -53,5 +66,5 @@ nav ul a:hover {
 }
 
 nav ul a {
-    padding: 0 11px!important;
+    padding: 0 20px!important;
 }

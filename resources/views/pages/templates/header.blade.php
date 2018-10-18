@@ -1,6 +1,6 @@
 {{-- BARRA PRINCIPAL --}}
 <nav class="principal">
-    <div class="container" style="width: 95%;">
+    <div class="container" style="width: 90%;">
         <div class="row">
             <div class="col l12 m12 s12 center" style="height: 45px;">
                 <div class="col l3 m3 s12">
@@ -21,7 +21,7 @@
                                 </img>
                                 </li>
                                 <li class="items_head">
-                                    <a href="{{ url('/empresa') }}">
+                                    <a href="mailto:{{$email->descripcion}}">
                                         {{$email->descripcion}}
                                     </a>
                                 </li>
@@ -119,7 +119,7 @@
                                 </li>
                                 <li class="menu_cate">
                                     <a href="{{ url('/biblioteca') }}" style="padding-top: 5%;">
-                                        Documentos
+                                        Definiciones
                                     </a>
                                 </li>
                                 <li class="menu_cate">
@@ -176,36 +176,17 @@
                             @endif
                             @if($activo=='contacto')
                             <li class="items_header">
-                                <a class="activo" href="{{ url('/sobrevivientes') }}">
-                                    Sobrevivientes
-                                </a>
-                            </li>
-                            @else
-                            <li class="items_header">
-                                <a href="{{ url('/sobrevivientes') }}">
-                                    Sobrevivientes
-                                </a>
-                            </li>
-                            @endif
-                            @if($activo=='contacto')
-                            <li class="items_header">
-                                <a class="activo" href="">
+                                <a class="activo" href="{{ url('/contacto') }}">
                                     Contacto
                                 </a>
                             </li>
                             @else
                             <li class="items_header">
-                                <a href="">
+                                <a href="{{ url('/contacto') }}">
                                     Contacto
                                 </a>
                             </li>
                             @endif
-                            <li class="items_header" style="">
-                                <a class="lupa modal-trigger" data-target="modalbuscador" style="padding-top: 21px!important;">
-                                    <img alt="" src="{{asset('img/lupa.png')}}">
-                                    </img>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     </div>

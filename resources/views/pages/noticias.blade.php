@@ -15,36 +15,34 @@
     </div>
 </div>
             <div class="container" style="width: 80%">
+                <div class="row" style="margin-top: 8%;">
 @foreach($novedades as $novedad)
-    <div class="row">
-            
-        <div class="contnovedad col l12 m12 s12">
-            <div class="col l4 m4 s12" style="padding-left: 0px;">
-                <div class="imgnovedad"> 
-                    <img class="responsive-img" src="{{ asset($novedad->imagen) }}"/>
-                </div>
+<div class="row novedad">
+    <div class="col l12 m12 s12">
+        <div class="bloque_novedad" style="">
+            <img class="imgnovedad responsive-img" src="{{ asset($novedad->imagen) }}" hspace="5" vspace="5" style="float: left;width: 250px;height: 250px;"/>
+            <div class="titulonovedad">
+                {!! $novedad->nombre !!}
             </div>
-            <div class="col l8 m8 s12" style="padding-left: 29px;">
-                <div class="titulonovedad">
-                    {!! $novedad->nombre !!}
-                </div>
-                <div class="descripcionnovedad">
-                    {!! $novedad->descripcion !!}
-                </div>
-                <div class="flecha">
-<a href="{{ route('noticiainfo', $novedad->id)}}">
+            <div class="descripcionnovedad">
+                {!! $novedad->descripcion !!}
+            </div>
+            <br>
+            <div class="flecha">
+    <a href="{{ route('noticiainfo', $novedad->id)}}">
                     <img class="responsive-img" src="{{ asset("/img/descarga.png") }}"/>
                     <span class="ver">
                     VER MÁS
                     </span>
                 </a>
-                </div>
             </div>
         </div>
     </div>    
+</div>
+    <br>
 @endforeach
-
-<br><br><br><br><br><br><br><br><br><br>
+</div>
+<br><br>
             </div>
 <script src="{{ asset('js/jquery.tinycarousel.min.js') }}" type="text/javascript">
 </script>

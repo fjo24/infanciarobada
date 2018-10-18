@@ -16,12 +16,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('empresa') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('/lared') }}">
                                     La red
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('categorias') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('/foros') }}">
                                     Foros
                                 </a>
                             </li>
@@ -30,12 +30,12 @@
                     <div class="listlinks col l4 m4 s6">
                         <ul style="">
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('categoriaobras') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('noticias') }}">
                                     Noticias
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('presupuesto') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('biblioteca') }}">
                                     Biblioteca
                                 </a>
                             </li>
@@ -49,12 +49,12 @@
                     <div class="listlinks col l4 m4 s6">
                         <ul style="">
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('categoriaobras') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('eventos') }}">
                                     Eventos
                                 </a>
                             </li>
                             <li>
-                                <a class="grey-text text-lighten-3" href="{{ url('presupuesto') }}">
+                                <a class="grey-text text-lighten-3" href="{{ url('sobrevivientes') }}">
                                     Sobrevivientes
                                 </a>
                             </li>
@@ -122,7 +122,9 @@
                                 </div>
                                 <div class="col l10 m10 s10" style="line-height: 18px!important;">
                                     <div class="rightlist">
-                                        {{$email->descripcion}}
+                                        <a style="color: #eee;" href="mailto:{{$email->descripcion}}">
+                                            {{$email->descripcion}}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
