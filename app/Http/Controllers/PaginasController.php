@@ -38,78 +38,84 @@ class PaginasController extends Controller
     {
         $activo    = 'lared';
         $lared = Contenido_red::all()->first();
-        $banner = Banner::Where('seccion', 'empresa')->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'red')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.lared', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.lared', compact('lared', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
     public function biblioteca()
     {
         $activo    = 'biblioteca';
         $novedades = Biblioteca::orderBy('orden', 'ASC')->get();
-        $banner = Banner::Where('seccion', 'empresa')->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'biblioteca')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.biblioteca', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.biblioteca', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
     public function eventos()
     {
         $activo    = 'eventos';
         $novedades = Evento::orderBy('orden', 'ASC')->get();
-        $banner = Banner::Where('seccion', 'empresa')->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'eventos')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.eventos', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.eventos', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
     public function eventoinfo($id)
     {
         $activo    = 'eventos';
         $empresa = Evento::find($id);
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'eventos')->get();
        // $banner = Banner::Where('seccion', 'empresa')->first();
         $imagenes   = Imgevento::orderBy('id', 'ASC')->Where('evento_id', $id)->get();
-        return view('pages.eventoinfo', compact('empresa', 'activo', 'imagenes', 'banner'));
+        return view('pages.eventoinfo', compact('empresa', 'activo', 'imagenes', 'sliders'));
     }
 
     public function noticias()
     {
         $activo    = 'noticias';
         $novedades = Noticia::orderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'noticias')->get();
         $banner = Banner::Where('seccion', 'empresa')->first();
-        return view('pages.noticias', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
-    }
-
-    public function sobrevivientes()
-    {
-        $activo    = 'biblioteca';
-        $novedades = Sobreviviente::orderBy('orden', 'ASC')->get();
-        $banner = Banner::Where('seccion', 'empresa')->first();
-        return view('pages.sobrevivientes', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner'));
-    }
-
-    public function sobrevivienteinfo($id)
-    {
-        $activo    = 'biblioteca';
-        $sobreviviente = Sobreviviente::find($id);
-        $banner = Banner::Where('seccion', 'empresa')->first();
-        return view('pages.sobrevivienteinfo', compact('sobreviviente', 'activo', 'imagenes', 'tiempos', 'banner'));
-    }
-
-    public function foros()
-    {
-        $activo = 'foros';
-        $mapas  = Foro::OrderBy('nombre', 'ASC')->get();
-        $banner = Banner::Where('seccion', 'empresa')->first();
-        return view('pages.foros', compact('mapas', 'activo', 'banner'));
+        return view('pages.noticias', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
     public function noticiainfo($id)
     {
         $activo    = 'noticias';
         $empresa = Noticia::find($id);
-       // $banner = Banner::Where('seccion', 'empresa')->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'noticias')->get();
         $imagenes   = Imgnoticia::orderBy('id', 'ASC')->Where('noticia_id', $id)->get();
-        return view('pages.noticiainfo', compact('empresa', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.noticiainfo', compact('empresa', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
+
+    public function sobrevivientes()
+    {
+        $activo    = 'biblioteca';
+        $novedades = Sobreviviente::orderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'sobrevivi')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.sobrevivientes', compact('novedades', 'activo', 'imagenes', 'tiempos', 'banner', 'sliders'));
+    }
+
+    public function sobrevivienteinfo($id)
+    {
+        $activo    = 'biblioteca';
+        $sobreviviente = Sobreviviente::find($id);
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'sobrevivi')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.sobrevivienteinfo', compact('sobreviviente', 'activo', 'imagenes', 'tiempos', 'banner', 'sliders'));
+    }
+
+    public function foros()
+    {
+        $activo = 'foros';
+        $mapas  = Foro::OrderBy('nombre', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'foros')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.foros', compact('mapas', 'activo', 'banner', 'sliders'));
+    }
+
 
     public function downloadPdf($id)
     {

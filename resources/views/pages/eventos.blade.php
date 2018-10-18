@@ -5,14 +5,25 @@
 @section('contenido')
 <link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet">
-<div class="seccion-banner" style="background: url(/{!! $banner->imagen !!});">
-    <div class="btexto">
-        <div class="tbanner">
-            <i>
-                {!! $banner->texto1 !!}
-            </i>
-        </div>
+<div class="carousel carousel-slider center" data-indicators="true">
+    @foreach($sliders as $slider)
+    <div class="carousel-item" href="">
+        <img alt="slider" src="{{ asset($slider->imagen) }}">
+            @if(isset($slider->texto)||isset($slider->texto2))
+            <div class="caption box-cap center" style="">
+                <div style="">
+                    <div class="slidertext2">
+                        {!! $slider->texto !!}
+                    </div>
+                    <div class="slidertext1">
+                        {!! $slider->texto2 !!}
+                    </div>
+                </div>
+            </div>
+            @endif
+        </img>
     </div>
+    @endforeach
 </div>
             <div class="container" style="width: 80%">
                 <div class="row" style="margin-top: 8%;">
@@ -27,7 +38,6 @@
             <div class="descripcionnovedad">
                 {!! $novedad->descripcion !!}
             </div>
-            <br>
             <div class="flecha">
     <a href="{{ route('eventoinfo', $novedad->id)}}">
                     <img class="responsive-img" src="{{ asset("/img/descarga.png") }}"/>
@@ -51,4 +61,28 @@
 <script type="text/javascript">
 </script>
 @endsection
+@section('js')
+<script type="text/javascript">
+    $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            height: 561,
+            indicators: true
+        });
+
+        // move next carousel
+        $('.moveNextCarousel').click(function(){
+            $('.carousel').carousel('next');
+        });
+
+        // move prev carousel
+        $('.movePrevCarousel').click(function(){
+            $('.carousel').carousel('prev');
+        });
+    $('.slider').slider({
+        indicators: true,
+        height: 560,
+    });
+</script>
+@endsection
+
 
