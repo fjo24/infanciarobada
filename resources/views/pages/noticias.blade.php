@@ -5,6 +5,7 @@
 @section('contenido')
 <link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/pages/empresa.css') }}" rel="stylesheet" type="text/css"/>
 <div class="carousel carousel-slider center" data-indicators="true">
     @foreach($sliders as $slider)
     <div class="carousel-item" href="">

@@ -130,9 +130,9 @@ class PaginasController extends Controller
     {
         $activo    = 'mision';
         $lared = Mision::all()->first();
-        $banner = Banner::Where('seccion', 'empresa')->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'red')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
-        return view('pages.mision', compact('lared', 'activo', 'imagenes', 'tiempos', 'banner'));
+        return view('pages.mision', compact('lared', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
     public function clientes()

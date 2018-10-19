@@ -48,7 +48,8 @@
 }
 
 .imagen_lared img{ 
-  height: 350px;
+  height: 510px!important;
+  width: 510px!important;
 }
 
 .linea_titulo{

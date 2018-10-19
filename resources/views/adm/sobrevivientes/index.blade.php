@@ -61,7 +61,7 @@
             </tbody>
         </table>
         <br>
-        <a href="{{ route('noticias.create') }}">
+        <a href="{{ route('sobrevivientes.create') }}">
             <div class="col l12 s12 no-padding" href="">
                 <button class="boton btn-large right" name="action" type="submit">
                     Nuevo

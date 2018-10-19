@@ -28,7 +28,7 @@
 </div>
     <div class="container" style="width: 90%">
         <div class="row toptab">
-            <div class="col s12 m7 l7">
+            <div class="col s12 m12 l12">
                 <div class="nombre_empresa">
                     {!! $lared->nombre !!}
                 </div>
@@ -39,14 +39,12 @@
                         </i>
                     </div>
                 </hr>
+            </div>
+            <div class="col s12 m12 l12" style="">
+                <img class="imagen_lared responsive-img" src="{{ asset($lared->imagen) }}" hspace="5" vspace="5" style="float: right;width: 490px;height: 490px;"/>
                 <div class="contenido_empresa">
                             {!! $lared->contenido !!}
                     </div>
-            </div>
-            <div class="col s12 m5 l5" style="">
-                <div class="responsive-img imagen_lared">
-                    <img src="{{asset($lared->imagen)}}"/>
-                </div>
             </div>
         </div>
     </div>

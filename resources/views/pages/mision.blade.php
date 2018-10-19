@@ -6,15 +6,24 @@
 <link href="{{ asset('css/pages/banner.css') }}" rel="stylesheet">
 @endsection
 @section('contenido')
-<div class="seccion-banner" style="background: url(/{!! $banner->imagen !!});">
-    <div class="btexto">
-        <div class="tbanner">
-            <i>
-                {!! $banner->texto1 !!}
-            </i>
-        </div>
+@foreach($sliders as $slider)
+    <div class="carousel-item" href="">
+        <img alt="slider" src="{{ asset($slider->imagen) }}">
+            @if(isset($slider->texto)||isset($slider->texto2))
+            <div class="caption box-cap center" style="">
+                <div style="">
+                    <div class="slidertext2">
+                        {!! $slider->texto !!}
+                    </div>
+                    <div class="slidertext1">
+                        {!! $slider->texto2 !!}
+                    </div>
+                </div>
+            </div>
+            @endif
+        </img>
     </div>
-</div>
+    @endforeach
     <div class="container" style="width: 90%">
         <div class="row toptab">
             <div class="col s12 m7 l7">
