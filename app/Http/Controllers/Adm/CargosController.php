@@ -10,7 +10,7 @@ class CargosController extends Controller
 {
     public function index()
     {
-        $cargos = Cargo::orderBy('cargo_id', 'ASC')->get();
+        $cargos = Cargo::orderBy('nombre', 'ASC')->get();
         return view('adm.cargos.index', compact('cargos'));
     }
 

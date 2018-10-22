@@ -16,7 +16,7 @@ class CreateContenidoRedesTable extends Migration
         Schema::create('contenido_redes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->text('contenido')->nullable();
             $table->string('pdf')->nullable();
             $table->string('imagen')->nullable();

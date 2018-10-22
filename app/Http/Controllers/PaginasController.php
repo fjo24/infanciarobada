@@ -11,16 +11,21 @@ use App\Noticia;
 use App\Sobreviviente;
 use App\Imgnoticia;
 use App\Evento;
+use App\Definicion;
 use App\Imgevento;
 use App\Contenido_red;
+use App\Referente;
 use Illuminate\Support\Facades\Mail;
 use App\Imgempresa;
 use App\Categoria;
 use App\Mision;
+use App\Video;
 use App\Biblioteca;
 use App\Foro;
 use App\Destacado_home;
+use App\Curso;
 use App\Cliente;
+use App\Seminario;
 
 class PaginasController extends Controller
 {
@@ -52,12 +57,35 @@ class PaginasController extends Controller
         return view('pages.biblioteca', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
+    public function definiciones()
+    {
+        $activo    = 'biblioteca';
+        $novedades = Definicion::orderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'biblioteca')->get();
+        return view('pages.definiciones', compact('novedades', 'activo', 'tiempos', 'sliders'));
+    }
+
     public function eventos()
     {
         $activo    = 'eventos';
         $novedades = Evento::orderBy('orden', 'ASC')->get();
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'eventos')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
+      /*  $events[];
+        $events[] = \Calendar::event{
+            "Events one",
+            true,
+            '2017-01-06t0800',
+            '2017-01-06t0900',
+            0
+        };
+
+        $calendar = \Calendar::addEvents($events)
+            ->setOptions([
+                'firstDay' => 1
+            ])->setCallbacks([
+        ]);*/
+
         return view('pages.eventos', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
@@ -89,6 +117,32 @@ class PaginasController extends Controller
         return view('pages.noticiainfo', compact('empresa', 'activo', 'imagenes', 'tiempos', 'sliders'));
     }
 
+    public function seminarios()
+    {
+        $activo    = 'escuela';
+        $novedades = Seminario::orderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'escuela')->get();
+        $banner = Banner::Where('seccion', 'empresa')->first();
+        return view('pages.seminarios', compact('novedades', 'activo', 'imagenes', 'tiempos', 'sliders'));
+    }
+
+    public function seminarioinfo($id)
+    {
+        $activo    = 'escuela';
+        $empresa = Seminario::find($id);
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'escuela')->get();
+        return view('pages.seminarioinfo', compact('empresa', 'activo', 'imagenes', 'tiempos', 'sliders'));
+    }
+
+    public function cursos()
+    {
+        $activo    = 'escuela';
+        $lared = Curso::all()->first();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'escuela')->get();
+        $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
+        return view('pages.curso', compact('lared', 'activo', 'imagenes', 'tiempos', 'sliders'));
+    }
+
     public function sobrevivientes()
     {
         $activo    = 'biblioteca';
@@ -116,7 +170,6 @@ class PaginasController extends Controller
         return view('pages.foros', compact('mapas', 'activo', 'banner', 'sliders'));
     }
 
-
     public function downloadPdf($id)
     {
         $biblioteca = Biblioteca::find($id);
@@ -126,6 +179,24 @@ class PaginasController extends Controller
         return redirect()->route('biblioteca.index');
     }
 
+    public function referentecv($id)
+    {
+        $referente = Referente::find($id);
+        $path     = public_path();
+        $url      = $path . '/' . $referente->cv;
+        return response()->download($url);
+        return redirect()->route('referentes.index');
+    }
+
+    public function pdfdefiniciones($id)
+    {
+        $biblioteca = Definicion::find($id);
+        $path     = public_path();
+        $url      = $path . '/' . $biblioteca->pdf;
+        return response()->download($url);
+        return redirect()->route('definiciones.index');
+    }
+
     public function mision()
     {
         $activo    = 'mision';
@@ -133,6 +204,21 @@ class PaginasController extends Controller
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'red')->get();
         $imagenes   = Imgempresa::orderBy('id', 'ASC')->get();
         return view('pages.mision', compact('lared', 'activo', 'imagenes', 'tiempos', 'sliders'));
+    }
+
+    public function referentes()
+    {
+        $activo    = 'lared';
+        $referentes = Referente::orderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'red')->get();
+        return view('pages.referentes', compact('referentes', 'activo', 'imagenes', 'tiempos', 'sliders'));
+    }
+
+    public function videos()
+    {
+        $activo    = 'biblioteca';
+        $videos = Video::orderBy('nombre', 'ASC')->get();
+        return view('pages.videos', compact('videos', 'activo'));
     }
 
     public function clientes()
@@ -168,9 +254,9 @@ class PaginasController extends Controller
 
     public function contacto()
     {
-        //return ($producto);
         $activo = 'contacto';
-        return view('pages.contacto', compact('activo'));
+        $foros = Foro::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
+        return view('pages.contacto', compact('activo', 'foros'));
     }
 
     public function enviarmailcontacto(Request $request)
@@ -179,27 +265,28 @@ class PaginasController extends Controller
         $dato     = Dato::where('tipo', 'mail')->first();
         $nombre   = $request->nombre;
         $telefono = $request->telefono;
-        $empresa  = $request->empresa;
+        $ciudad  = $request->ciudad;
         $email    = $request->email;
         $mensaje  = $request->mensaje;
-       //     dd($producto);
-        Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'telefono' => $telefono, 'empresa' => $empresa, 'email' => $email, 'mensaje' => $mensaje], function ($message){
+        $foroid = $request->foro_id;
+            //dd($request);
+        Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'telefono' => $telefono, 'ciudad' => $ciudad, 'email' => $email, 'mensaje' => $mensaje, 'foroid' => $foroid], function ($message) use($foroid){
 
+            $dato = Foro::where('id', $foroid)->first();
+            $message->from('info@aberturastolosa.com.ar', 'Red Infancia Robada');
 
-
-            $dato = Dato::where('tipo', 'email')->first();
-            $message->from('info@aberturastolosa.com.ar', 'VLM');
-
-            $message->to($dato->descripcion);
+            $message->to($dato->correo);
 
             //Add a subject
             $message->subject('Consulta desde web');
 
         });
         if (Mail::failures()) {
-            return view('pages.contacto', compact('activo'));
+            $foros = Foro::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
+            return view('pages.contacto', compact('activo', 'foros'));
         }
-        return view('pages.contacto', compact('activo'));
+        $foros = Foro::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
+        return view('pages.contacto', compact('activo', 'foros'));
     }
 
     public function quiero()

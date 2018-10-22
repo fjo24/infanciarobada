@@ -25,6 +25,9 @@
         <table class="highlight bordered">
             <thead>
                 <th>
+                    Titulo
+                </th>
+                <th>
                     Correo electronico
                 </th>
                 <th>
@@ -43,6 +46,9 @@
             <tbody>
                 @foreach($foros as $foro)
                 <tr>
+                    <td>
+                        {!!$foro->nombre!!}
+                    </td>
                     <td>
                         {!!$foro->correo!!}
                     </td>

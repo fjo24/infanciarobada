@@ -147,6 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -162,6 +163,9 @@ return [
 
         // laravelcollective
         Collective\Html\HtmlServiceProvider::class,
+
+        //Fullcalendar
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
 
     ],
 
@@ -214,7 +218,8 @@ return [
 
         //my aliases
         'Form' => Collective\Html\FormFacade::class,
-      'Html' => Collective\Html\HtmlFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
 
     ],
 

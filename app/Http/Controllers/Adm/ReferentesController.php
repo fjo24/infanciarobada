@@ -26,6 +26,7 @@ class ReferentesController extends Controller
 
         $referente              = new Referente();
         $referente->nombre      = $request->nombre;
+        $referente->orden      = $request->orden;
         $referente->cargo_id       = $request->cargo_id;
         $id                     = Referente::all()->max('id');
         $id++;
@@ -35,6 +36,14 @@ class ReferentesController extends Controller
                 $path = public_path('img/referente/');
                 $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
                 $referente->imagen = 'img/referente/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
+        if ($request->hasFile('cv')) {
+            if ($request->file('cv')->isValid()) {
+                $file = $request->file('cv');
+                $path = public_path('img/referentes/');
+                $request->file('cv')->move($path, $id . '_' . $file->getClientOriginalName());
+                $referente->cv = 'img/referentes/' . $id . '_' . $file->getClientOriginalName();
             }
         }
         $referente->save();
@@ -50,13 +59,14 @@ class ReferentesController extends Controller
     {
         $cargos = Cargo::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
         $referente  = Referente::find($id);
-        return view('adm.referentes.edit', compact('referente', 'referentes'));
+        return view('adm.referentes.edit', compact('referente', 'cargos'));
     }
 
     public function update(Request $request, $id)
     {
         $referente = Referente::find($id);
         $referente->nombre = $request->nombre;
+        $referente->orden      = $request->orden;
         $referente->cargo_id  = $request->cargo_id;
 
         if ($request->hasFile('imagen')) {
@@ -65,6 +75,14 @@ class ReferentesController extends Controller
                 $path = public_path('img/referente/');
                 $request->file('imagen')->move($path, $id . '_' . $file->getClientOriginalName());
                 $referente->imagen = 'img/referente/' . $id . '_' . $file->getClientOriginalName();
+            }
+        }
+        if ($request->hasFile('cv')) {
+            if ($request->file('cv')->isValid()) {
+                $file = $request->file('cv');
+                $path = public_path('img/referentes/');
+                $request->file('cv')->move($path, $id . '_' . $file->getClientOriginalName());
+                $referente->cv = 'img/referentes/' . $id . '_' . $file->getClientOriginalName();
             }
         }
         $referente->save();

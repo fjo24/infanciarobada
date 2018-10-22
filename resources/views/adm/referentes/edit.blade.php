@@ -27,6 +27,10 @@
                 {!!Form::label('Nombre:')!!}
                 {!!Form::text('nombre', null , ['class'=>'', 'required'])!!}
             </div>
+        <div class="input-field col l6 s12">
+                {!!Form::label('Orden:')!!}
+                {!!Form::text('orden', null , ['class'=>''])!!}
+            </div>
         </div>
         <div class="file-field input-field col l6 s12">
             {!! Form::label('Cargo') !!}<br />
@@ -44,6 +48,18 @@
                     {!!Form::label('Recomendado: 411px - 411px')!!}
                 </div>
             </div>
+            <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Curriculum 
+                    </span>
+                    {!! Form::file('cv') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('cv',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 411px - 411px')!!}
+                </div>
+            </div>
                 <div class="col l12 s12 no-padding">
             <button class="boton btn-large right" name="action" type="submit">
                 Editar
@@ -53,3 +69,12 @@
             </div>
         </div>
 @endsection
+@section('js')
+<script type="text/javascript">
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+
+</script>
+@endsection
+

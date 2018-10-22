@@ -7,7 +7,7 @@
                     <meta content="" name="description">
                         <meta content="" name="author">
                             <title>
-                                Panel de administración - @yield('titulo')
+                                Panel de administración - @yield('title')
                             </title>
                             <link href="{{ asset('img/favicon.ico') }}" rel="icon" type=""/>
                             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -178,6 +178,28 @@
                             <i class="material-icons">
                                 thumb_up
                             </i>
+                            Referentes
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('cargos.index')}}">
+                                        Cargos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('referentes.index')}}">
+                                        Referentes
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                thumb_up
+                            </i>
                             Foros
                         </a>
                         <div class="collapsible-body">
@@ -261,6 +283,28 @@
                             <i class="material-icons">
                                 home
                             </i>
+                            Escuela
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('seminarios.index')}}">
+                                        Listado/Editar Seminario
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('contenido_curso.create')}}">
+                                        Editar contenido cursos
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                home
+                            </i>
                             Eventos
                         </a>
                         <div class="collapsible-body">
@@ -288,23 +332,23 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li>
-                                    <a href="{{route('biblioteca.create')}}">
-                                        Crear Biblioteca
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="{{route('biblioteca.index')}}">
                                         Listado/Editar Biblioteca
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{route('sobrevivientes.create')}}">
-                                        Crear Sobreviviente
+                                    <a href="{{route('definiciones.index')}}">
+                                        Listado/Editar Definiciones
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{route('sobrevivientes.index')}}">
-                                        Listado/Editar Sobreviviente
+                                        Listado/Editar Sobrevivientes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('videos.index')}}">
+                                        Listado/Editar Videos
                                     </a>
                                 </li>
                             </ul>

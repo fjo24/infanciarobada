@@ -44,11 +44,10 @@
         </main>
           <!--  footer aqui -->
           @include('pages.templates.footer')
+
         <!--Import jQuery before materialize.js-->
-        <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript">
+        </script>
         <!-- Materialize Core JavaScript -->
         <script src="{{ asset('plugins/materialize/js/materialize.min.js') }}">
         </script>
@@ -56,25 +55,10 @@
         <script type="text/javascript">
          $(document).ready(function(){
     $('.sidenav').sidenav();
-    $(".dropdown-trigger").dropdown({
-        closeOnClick:false,
-    });
-    $(".dropdown-trigger2").dropdown({
-        closeOnClick:false,
-    });
-    $(".dropdown-trigger3").dropdown({
-        closeOnClick:false,
-    });
+    $(".dropdown-trigger").dropdown();
+    $('.collapsible').collapsible();
 
   });
-
-$(document).ready(function(){
-    $('.modal').modal();
-  });
-
-        $('.dropdown-button').dropdown({
-          hover: true
-        });
     </script>
     </body>
 </html>

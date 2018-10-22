@@ -8,7 +8,7 @@ class Cargo extends Model
 {
     protected $table    = "cargos";
     protected $fillable = [
-        'nombre', 'descripcion',
+        'nombre', 'descripcion', 'orden', 
     ];
     public function referentes()
     {

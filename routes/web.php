@@ -20,6 +20,9 @@ Route::get('/home', 'Adm\AdminController@admin')->name('home');
 //EMPRESAS
 Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 
+//VIDEOS
+Route::get('/videos', 'PaginasController@videos')->name('videos');
+
 //NOTICIA
 Route::get('noticiainfo/{id}', 'PaginasController@noticiainfo')->name('noticiainfo');
 
@@ -63,8 +66,27 @@ Route::get('/biblioteca', 'PaginasController@biblioteca')->name('biblioteca');
 // Rutas de reportes pdf desde la web
     Route::get('pdf/{id}', ['uses' => 'PaginasController@downloadPdf', 'as' => 'file-pdf']);
 
+    //DEFINICIONES
+Route::get('/definiciones', 'PaginasController@definiciones')->name('definiciones');
+// Rutas de reportes pdf desde la web
+    Route::get('pdfdefiniciones/{id}', ['uses' => 'PaginasController@pdfdefiniciones', 'as' => 'pdfdefiniciones']);
+
 //NOTICIAS
 Route::get('/noticias', 'PaginasController@noticias')->name('noticias');
+
+//REFERENTES
+Route::get('/referentes', 'PaginasController@referentes')->name('referentes');
+// Rutas de reportes pdf desde la web
+    Route::get('referentecv/{id}', ['uses' => 'PaginasController@referentecv', 'as' => 'referentecv']);
+
+//SEMINARIOS
+Route::get('/seminarios', 'PaginasController@seminarios')->name('seminarios');
+
+//SEMINARIOS INFO
+Route::get('/seminarioinfo/{id}', 'PaginasController@seminarioinfo')->name('seminarioinfo');
+
+//CURSOS
+Route::get('/cursos', 'PaginasController@cursos')->name('cursos');
 
 //EVENTOS
 Route::get('/eventos', 'PaginasController@eventos')->name('eventos');
@@ -96,6 +118,9 @@ Route::post('productos/buscar', [
 
     //DASHBOARD
     Route::get('/dashboard', 'Adm\AdminController@admin');
+
+    /*------------VIDEOS----------------*/
+    Route::resource('videos', 'Adm\VideosController');
 
     /*------------BANNERS----------------*/
     Route::resource('banners', 'Adm\BannersController');
@@ -143,17 +168,29 @@ Route::post('productos/buscar', [
     /*------------Contenido la red----------------*/
     Route::resource('contenido_red', 'Adm\ContenidoRedController'); 
 
+    /*------------Contenido curso----------------*/
+    Route::resource('contenido_curso', 'Adm\CursosController'); 
+
     /*------------Contenido mision----------------*/
     Route::resource('mision', 'Adm\MisionController'); 
 
     /*------------Contenido biblioteca----------------*/
     Route::resource('biblioteca', 'Adm\BibliotecaController'); 
 
+    /*------------Definiciones----------------*/
+    Route::resource('definiciones', 'Adm\DefinicionesController'); 
+
     /*------------eventos----------------*/
-    Route::resource('eventos', 'Adm\EventosController'); 
+    Route::resource('eventos', 'Adm\EventosController');
 
     /*------------noticias----------------*/
     Route::resource('noticias', 'Adm\NoticiasController'); 
+
+    /*------------seminarios----------------*/
+    Route::resource('seminarios', 'Adm\SeminariosController'); 
+
+    /*------------referentes----------------*/
+    Route::resource('referentes', 'Adm\ReferentesController'); 
 
     /*------------sobrevivientes----------------*/
     Route::resource('sobrevivientes', 'Adm\SobrevivientesController'); 

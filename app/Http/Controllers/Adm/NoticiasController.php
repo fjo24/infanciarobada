@@ -89,6 +89,13 @@ class NoticiasController extends Controller
         return redirect()->route('noticias.index', $homes->id);
     }
 
+    public function destroy($id)
+    {
+        $noticia = Noticia::find($id);
+        $noticia->delete();
+        return redirect()->route('noticias.index');
+    }
+
     //admin de imagenes
     public function imagenes($id)
     {

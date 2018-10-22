@@ -29,6 +29,10 @@
                         {!!Form::text('correo', null , ['class'=>'', 'required'])!!}
             </div>
             <div class="input-field col l6 s12">
+                {!!Form::label('Titulo:')!!}
+                        {!!Form::text('nombre', null , ['class'=>'', 'required'])!!}
+            </div>
+            <div class="input-field col l6 s12">
                 {!!Form::label('Localidad:')!!}
                         {!!Form::text('localidad', null , ['class'=>'', ''])!!}
             </div>

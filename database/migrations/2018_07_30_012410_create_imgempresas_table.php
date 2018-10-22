@@ -30,6 +30,6 @@ class CreateImgempresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imgproductos');
+        Schema::dropIfExists('imgempresas');
     }
 }

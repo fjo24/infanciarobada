@@ -37,7 +37,15 @@
 						</tr>
 					@endforeach
 					</tbody>
-				</table>				
+				</table>	
+				<br><br>
+				<a href="{{ route('referentes.create') }}">
+            <div class="col l12 s12 no-padding" href="">
+                <button class="boton btn-large right" name="action" type="submit">
+                    Nuevo
+                </button>
+            </div>
+        </a>			
 			</div>
 		</div>
 <script type="text/javascript" src="{{ asset('js/eliminar.js') }}"></script>

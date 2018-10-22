@@ -57,7 +57,7 @@
                                     </a>
                                 </li>
                                 <li class="menu_cate">
-                                    <a href="" style="padding-top: 5%;">
+                                    <a href="{{ url('/referentes') }}" style="padding-top: 5%;">
                                         Referentes
                                     </a>
                                 </li>
@@ -123,7 +123,7 @@
                                     </a>
                                 </li>
                                 <li class="menu_cate">
-                                    <a href="{{ url('/biblioteca') }}" style="padding-top: 5%;">
+                                    <a href="{{ url('/videos') }}" style="padding-top: 5%;">
                                         Videos
                                     </a>
                                 </li>
@@ -135,18 +135,43 @@
                             </ul>
                         </li>
                             @endif
-                            @if($activo=='novedades')
-                            <li class="items_header">
-                                <a class="activo" href="">
+                            @if($activo=='escuela')
+                            <li class="items_header" id="menu_productos">
+                                <a class="activo prod_menu" href="">
                                     Escuela
                                 </a>
+                                <ul style="margin-top: -16%!important;">
+                                <li class="menu_cate">
+                                    <a href="{{ url('/cursos') }}" style="padding-top: 5%;">
+                                        Cursos
+                                    </a>
+                                </li>
+                                <li class="menu_cate">
+                                    <a href="{{ url('/seminarios') }}" style="padding-top: 5%;">
+                                        Seminarios
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                             </li>
                             @else
-                            <li class="items_header">
-                                <a href="">
-                                    Escuela
-                                </a>
-                            </li>
+                            <li class="items_header" id="menu_productos">
+                            <a class="prod_menu" href="">
+                                Escuela
+                            </a>
+                            <ul style="margin-top: -16%!important;">
+                                <li class="menu_cate">
+                                    <a href="{{ url('/cursos') }}" style="padding-top: 5%;">
+                                        Cursos
+                                    </a>
+                                </li>
+                                <li class="menu_cate">
+                                    <a href="{{ url('/seminarios') }}" style="padding-top: 5%;">
+                                        Seminarios
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                             @endif
                             @if($activo=='eventos')
                             <li class="items_header">
@@ -161,7 +186,7 @@
                                 </a>
                             </li>
                             @endif
-                            @if($activo=='contacto')
+                            @if($activo=='webmail')
                             <li class="items_header">
                                 <a class="activo" href="">
                                     Web Mail

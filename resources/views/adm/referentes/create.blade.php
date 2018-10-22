@@ -27,11 +27,14 @@
                 {!!Form::label('Nombre:')!!}
 				{!!Form::text('nombre', null , ['class'=>'', 'required'])!!}
             </div>
-        </div>
         <div class="file-field input-field col l6 s12">
-            {!! Form::label('Cargo') !!}<br />
             {!! Form::select('cargo_id', $cargos, null, ['class' => 'form-control', 'placeholder' => 'Cargo', 'required']) !!}
         </div>
+        </div>
+        <div class="input-field col l6 s12">
+                {!!Form::label('Orden:')!!}
+                {!!Form::text('orden', null , ['class'=>'', 'required'])!!}
+            </div>
         <div class="file-field input-field col l6 s12">
                 <div class="btn">
                     <span>
@@ -41,6 +44,18 @@
                 </div>
                 <div class="file-path-wrapper">
                     {!! Form::text('imagen',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 411px - 411px')!!}
+                </div>
+            </div>
+            <div class="file-field input-field col l6 s12">
+                <div class="btn">
+                    <span>
+                        Curriculum 
+                    </span>
+                    {!! Form::file('cv') !!}
+                </div>
+                <div class="file-path-wrapper">
+                    {!! Form::text('cv',null, ['class'=>'file-path']) !!}
                     {!!Form::label('Recomendado: 411px - 411px')!!}
                 </div>
             </div>

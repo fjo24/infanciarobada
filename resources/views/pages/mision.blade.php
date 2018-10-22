@@ -23,7 +23,7 @@
             @endif
         </img>
     </div>
-    @endforeach
+@endforeach
     <div class="container" style="width: 90%">
         <div class="row toptab">
             <div class="col s12 m7 l7">

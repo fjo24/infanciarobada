@@ -17,6 +17,8 @@ class CreateReferentesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('imagen')->nullable();
+            $table->string('cv')->nullable();
+            $table->string('orden')->nullable();
             $table->integer('cargo_id')->unsigned();
 
             $table->foreign('cargo_id')->references('id')->on('cargos')->onDelete('cascade');
