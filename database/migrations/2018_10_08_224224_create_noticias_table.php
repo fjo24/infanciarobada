@@ -20,6 +20,7 @@ class CreateNoticiasTable extends Migration
             $table->text('contenido')->nullable();
             $table->text('orden')->nullable();
             $table->string('pdf')->nullable();
+            $table->date('fecha')->nullable();
             $table->string('imagen')->nullable();
             $table->timestamps();
         });

@@ -99,7 +99,7 @@ Route::post('enviar-mailcontacto', [
 ]);
 
 //ORGANIZMOS ASOCIADOS
-Route::get('/clientes', 'PaginasController@clientes')->name('clientes');
+Route::get('/organismos-asociados', 'PaginasController@clientes')->name('clientes');
 
 //ORGANIZMOS ASOCIADOS
 Route::get('/foros', 'PaginasController@foros')->name('foros');

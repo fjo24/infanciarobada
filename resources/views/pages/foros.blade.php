@@ -27,37 +27,6 @@
     </div>
     @endforeach
 </div>
-<div class="container" style="width: 85%;">
-		<div class="row bloquecont center">
-        <span class="titulo-cat">
-            NUESTRA RED DE FOROS SOCIALES
-        </span>
-        <hr class="cat-line"/>
-        <div class="items-cat col l12 s12 m12">
-            <p class="texto-ini">
-                Red Infancia Robada - red@infanciarobada.org:
-            </p>
-        </div>
-		<div class="listado_foros col l12 m12 s12" style="margin-top: 5%; margin-bottom: 5%;">
-			@foreach($mapas as $foro)
-				<div class="col l4 m4 s12">
-					<div class="center">
-						<div class="titulo_foro center" style="font-size: 28px;font-family: 'Titillium Web', sans-serif;color: #595959;font-weight: 600;">
-							<span>
-			                	{{ $foro->direccion }}
-							</span>
-			            </div>
-			            <div class="descripcion_foro center" style="font-size: 18px;
-    font-family: 'Titillium Web', sans-serif;
-        color: #D8212A;">
-			                {{ $foro->correo }}
-			            </div>
-					</div>
-				</div>
-			@endforeach
-		</div>
-	</div>
-</div>
 	<div class="col l12 m12 s12">
 		<div class="col l6 m6 s12">
         <!-- CUERPO -->
@@ -73,6 +42,37 @@
 </div>
 		</div>
 	</div>
+	<div class="container" style="width: 85%;">
+		<div class="row bloquecont center">
+        <span class="titulo-cat">
+            NUESTRA RED DE FOROS SOCIALES
+        </span>
+        <hr class="cat-line"/>
+		<div class="listado_foros col l12 m12 s12" style="margin-top: 5%; margin-bottom: 5%;">
+			@foreach($mapas as $foro)
+				<div class="col l4 m4 s12">
+					<div class="center">
+						<div class="titulo_foro center" style="font-size: 28px;font-family: 'Titillium Web', sans-serif;color: #595959;font-weight: 600;">
+							<span>
+			                	{{ $foro->nombre }}
+							</span>
+			            </div>
+							<span style="font-size: 17px;">
+			                	{{ $foro->direccion }}
+							</span>
+			            <div class="descripcion_foro center" style="font-size: 18px;
+    font-family: 'Titillium Web', sans-serif;
+        color: #D8212A;">
+        <a href="mailto:{{ $foro->correo }}" style="color:#FF0000">
+			                {{ $foro->correo }}
+                                    </a>
+			            </div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
+</div>
 @endsection
 @section('js')
 <script type="text/javascript">

@@ -116,9 +116,9 @@ aprender e informarte sobre el tema
                 <div class="col l4 m4 s12">
                     <div class="card">
                         <div class="card-image">
-                            <img src="{{ asset($noticia->imagen) }}" style="padding: 5%;"/>
+                            <img src="{{ asset($noticia->imagen) }}" style="padding: 5%;height: 180px;"/>
                         </div>
-                        <div class="card-title" style="color: #D8222A;margin-left: 5%;font-size: 19px;">
+                        <div class="card-title" style="color: #D8222A;margin-left: 5%;font-size: 18px;height: 56px;">
                             {{ $noticia->nombre }}
                         </div>
                         <div class="card-content" style="padding-bottom: 2%;padding-top: 2%;">    
@@ -126,10 +126,16 @@ aprender e informarte sobre el tema
                                 {{ $noticia->fecha }}<br>
                             </p>
                         </div>
-                        <div class="card-content" style="padding-top: 2%;">
-                            <p class="contenido_noti">
-                                {{ $noticia->contenido }}
-                            </p>
+                        <div class="card-content" style="padding-top: 2%;height: 164px;">
+                            <div class="contenido_noti">
+                                @php
+                                 $descripcion = str_limit($noticia->descripcion, 150, '...');
+                                 @endphp
+                                {!! $descripcion !!}
+                            </div>
+                            <a class="right" style="color: #AA0000;" href="{{ route('noticiainfo', $noticia->id)}}">
+                                Ver mas...
+                            </a>
                         </div>
                     </div>
                 </div>

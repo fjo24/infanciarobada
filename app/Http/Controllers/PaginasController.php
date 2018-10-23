@@ -35,7 +35,7 @@ class PaginasController extends Controller
         $ready = 0;
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
         $home = Empresa::all()->first();
-        $noticias = Destacado_home::OrderBy('Orden', 'ASC')->get();
+        $noticias = Noticia::OrderBy('Orden', 'ASC')->get();
         return view('pages.home', compact('home', 'sliders', 'activo', 'productos', 'ready', 'noticias', 'categorias'));
     }
 

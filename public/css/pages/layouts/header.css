@@ -17,9 +17,62 @@ nav ul a:hover {
 header{
     height: 170px;
 }
+header {
+    width:100%; /* Establecemos que el header abarque el 100% del documento */
+    z-index: 99;
+}
+
+header nav .items_header {
+
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+header nav .items_header {
+
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+.header2 nav .items_head {
+    display: none;
+}
+
+.header2 {
+    position: fixed;
+    height:100px;
+}
+
+.header2 .img_logo {
+    margin-top: 0;
+    height: 100px;
+}
+
+.header2 .lista {
+    margin-top: 1%;
+}
+
+.header2 .logo {
+    line-height:100px;
+    font-size:30px;
+}
+
+.header2 .logo {
+    line-height:100px;
+    font-size:30px;
+}
 
 header .principal {
     height: 170px!important;
+    background-color: white;
+    font-family: 'Titillium Web';
+    display: table;
+}
+
+.header2 .principal {
+    height: 100px!important;
     background-color: white;
     font-family: 'Titillium Web';
     display: table;
@@ -50,6 +103,7 @@ header .principal {
 .items_header a{
     color: #727174;
     font-size: 18px;
+    border-bottom: 3px solid transparent !important;
 }
 
 .activo{

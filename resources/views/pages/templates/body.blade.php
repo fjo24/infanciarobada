@@ -18,8 +18,7 @@
                                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
                                     <script src='https://www.google.com/recaptcha/api.js'></script>
                                         <link href="{{ asset('plugins/materialize/css/materialize.min.css') }}" rel="stylesheet">
-
-                                            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
        <!--    <script type="text/javascript" src="http://osolelaravel.com/drimer/js/materialize.min.js"></script>-->
@@ -36,7 +35,7 @@
     </head>
     <body>
         <!-- CABECERA -->
-        <header>
+        <header class="header2">
             @include('pages.templates.header')
         </header>
         <main style="">
@@ -53,6 +52,21 @@
         </script>
         @yield('js')
         <script type="text/javascript">
+
+            $(document).ready(function(){
+
+    $(window).scroll(function(){
+        if( $(this).scrollTop() > 100 ){
+            $('header').addClass('header2');
+        } else {
+            $('header').removeClass('header2');
+        }
+    });
+
+});
+           /* $(document).ready(function(){
+                $('.target').pushpin();
+  });*/
          $(document).ready(function(){
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();

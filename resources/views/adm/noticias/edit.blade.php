@@ -32,6 +32,10 @@
                 {!!Form::label('orden:')!!}
                         {!!Form::text('orden', null , ['class'=>''])!!}
             </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Fecha:')!!}
+                        {!!Form::text('fecha', null , ['class'=>'datepicker', ''])!!}
+            </div>
         </div>
         <div class="file-field input-field col l6 s12">
                 <div class="btn">
@@ -82,6 +86,12 @@
 <script src="//cdn.ckeditor.com/4.9.2/standard/ckeditor.js">
 </script>
 <script type="text/javascript">
+    $(document).ready(function(){
+   $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+              selectYears: 200
+        });
+   });
     $(document).ready(function(){
     $('select').formSelect();
   });

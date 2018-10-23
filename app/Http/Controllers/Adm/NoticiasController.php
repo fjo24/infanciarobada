@@ -28,6 +28,7 @@ class NoticiasController extends Controller
         $homes->descripcion = $request->descripcion;
         $homes->contenido = $request->contenido;
         $homes->orden   = $request->orden;
+        $homes->fecha  = $request->fecha;
         $id              = noticia::all()->max('id');
         $id++;
         if ($request->hasFile('imagen')) {
@@ -66,6 +67,7 @@ class NoticiasController extends Controller
         $homes->descripcion = $request->descripcion;
         $homes->contenido = $request->contenido;
         $homes->orden   = $request->orden;
+        $homes->fecha  = $request->fecha;
         if ($request->hasFile('imagen')) {
             if ($request->file('imagen')->isValid()) {
                 $file = $request->file('imagen');

@@ -1,9 +1,11 @@
 {{-- BARRA PRINCIPAL --}}
-<nav class="principal">
+
+<div id="red" class="block red lighten-1">
+<nav class="pushpin-demo-nav principal target" data-target="red" style="z-index: 99;">
     <div class="container" style="width: 90%;">
-        <div class="row">
+        <div class="nav-wrapper row">
             <div class="col l12 m12 s12 center" style="height: 45px;">
-                <div class="col l3 m3 s12">
+                <div class="col l3 m3 s12 logo_p">
                     <a class="" style="">
                             <a href="{{ url('/') }}">
                         <div class="logo_header">
@@ -12,7 +14,7 @@
                             </a>
                     </a>
                 </div>
-                <div class="col l9 m9 s12">
+                <div class="col l9 m9 s12 lista">
                     <div class="col l12 m12 s12">
                         <div class="right menu_header">
                             <ul class="item-left center hide-on-med-and-down">
@@ -67,7 +69,7 @@
                                     </a>
                                 </li>
                                 <li class="menu_cate">
-                                    <a href="{{ url('/clientes') }}" style="padding-top: 5%;">
+                                    <a href="{{ url('/organismos-asociados') }}" style="padding-top: 5%;">
                                         Organizmos Asociados
                                     </a>
                                 </li>
@@ -220,6 +222,7 @@
         </div>
     </div>
 </nav>
+</div>
 {{-- Para moviles --}}
 <ul class="sidenav" id="slide-out" style="position: absolute;color: #7D0045;">
     <ul class="collapsible collapsible-accordion">

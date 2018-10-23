@@ -54,12 +54,13 @@
 }
 
 .noticias{
-    height: 600px;
+    height: 630px;
     background: #900A19;
 }
 
 .referentes{
     background: #900A19;
+    margin-top: 7%;
 }
 
 .titulo_noticias{
@@ -69,6 +70,12 @@
     margin-bottom: 3%;
 }
 
-.fecha_noti{
-
+.contenido_noti {
+        width: 80%;
+    height: 124px;
+    color: black;
+    font-size: 14px;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
 }
