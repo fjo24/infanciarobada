@@ -6,15 +6,13 @@
 @section('contenido')
 <div class="container" style="width: 85%;">
     <div class="row bloquecont center">
-        <div class="row" style= "margin-bottom: 5px;">
+        <div class="row" style= "margin-bottom: 5px;padding-top: 6%;">
   <div class="col l12" style="text-align: left;">
   <h6 style="font-family: 'Titillium Web'; color:#D8212A;font-size: 22px;"></h6>
   <h4 style="font-family: 'Titillium Web'; color:#D8212A; margin-top: 0px;font-size: 38px;"><b>NUESTROS VIDEOS</b></h4>  
   </div>
 </div>
-        <div class="servicios" style="align-items: center">
-            <div class="items-servicio row" style="align-items: center;">
-                <div class="bloquecard col l12 s12 m12">
+        <div class="bloquecard col l12 s12 m12">
                     @foreach($videos as $video)
                     <div class="col l4 s12 m6">
                         <div class="card white darken-1" style="">
@@ -37,9 +35,6 @@
                     </div>
                     @endforeach
                 </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 

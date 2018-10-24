@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="sitemap col l4 m4 s12">
-                    <div class="listlinks col l4 m4 s6">
+                    <div class="listlinks col l4 m4 s12">
                         <ul>
                             <li>
                                 <a class="grey-text text-lighten-3" href="{{ url('/') }}">
@@ -27,7 +27,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="listlinks col l4 m4 s6">
+                    <div class="listlinks col l4 m4 s12">
                         <ul style="">
                             <li>
                                 <a class="grey-text text-lighten-3" href="{{ url('noticias') }}">
@@ -46,7 +46,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="listlinks col l4 m4 s6">
+                    <div class="listlinks col l4 m4 s12">
                         <ul style="">
                             <li>
                                 <a class="grey-text text-lighten-3" href="{{ url('eventos') }}">

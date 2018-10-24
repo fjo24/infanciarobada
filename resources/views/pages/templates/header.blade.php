@@ -1,10 +1,11 @@
 {{-- BARRA PRINCIPAL --}}
 
-<div id="red" class="block red lighten-1">
-<nav class="pushpin-demo-nav principal target" data-target="red" style="z-index: 99;">
+<div class="block red lighten-1">
+<nav class="principal target" data-target="red" style="z-index: 99;">
     <div class="container" style="width: 90%;">
         <div class="nav-wrapper row">
             <div class="col l12 m12 s12 center" style="height: 45px;">
+    <a href="#" data-target="slide-out"  class="items_head sidenav-trigger" style=" "><i class="material-icons" style="color: #AA0000;">menu</i></a>
                 <div class="col l3 m3 s12 logo_p">
                     <a class="" style="">
                             <a href="{{ url('/') }}">
@@ -14,7 +15,7 @@
                             </a>
                     </a>
                 </div>
-                <div class="col l9 m9 s12 lista">
+                <div class="col l9 m9 s12 lista hide-on-med-and-down">
                     <div class="col l12 m12 s12">
                         <div class="right menu_header">
                             <ul class="item-left center hide-on-med-and-down">
@@ -224,7 +225,7 @@
 </nav>
 </div>
 {{-- Para moviles --}}
-<ul class="sidenav" id="slide-out" style="position: absolute;color: #7D0045;">
+<ul class="sidenav" id="slide-out" style="position: absolute;color: #7D0045; z-index: 9999;">
     <ul class="collapsible collapsible-accordion">
         <li class="bold">
             <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
@@ -237,13 +238,101 @@
             </a>
         </li>
         <li class="bold">
-            <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/empresa') }}">
+            <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/lared') }}">
                 <i class="material-icons">
                     group
                 </i>
-                EMPRESA
+                La Red
             </a>
         </li>
+        <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/referentes') }}">
+                    <i class="material-icons">
+                        new_releases
+                    </i>
+                    Referentes
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/organismos-asociados') }}">
+                    <i class="material-icons">
+                        build
+                    </i>
+                    Organismos Asociados
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/foros') }}">
+                    <i class="material-icons">
+                        new_releases
+                    </i>
+                    Foros
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/noticias') }}">
+                    <i class="material-icons">
+                        build
+                    </i>
+                    Noticias
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/biblioteca') }}">
+                    <i class="material-icons">
+                        new_releases
+                    </i>
+                    Biblioteca
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/videos') }}">
+                    <i class="material-icons">
+                        build
+                    </i>
+                    Videos
+                </a>
+            </li>
+        <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/sobrevivientes') }}">
+                    <i class="material-icons">
+                        new_releases
+                    </i>
+                    Sobrevivientes
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/cursos') }}">
+                    <i class="material-icons">
+                        build
+                    </i>
+                    Cursos
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('seminarios') }}">
+                    <i class="material-icons">
+                        format_list_numbered
+                    </i>
+                    Seminarios
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('eventos') }}">
+                    <i class="material-icons">
+                        format_list_numbered
+                    </i>
+                    Eventos
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/contacto') }}">
+                    <i class="material-icons">
+                        contact_mail
+                    </i>
+                    Contacto
+                </a>
+            </li>
     </ul>
 </ul>
 {{-- Para moviles fin--}}

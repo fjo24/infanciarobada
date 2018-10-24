@@ -23,7 +23,6 @@
 .bloquecard {
     padding-right: 5px!important;
     padding-left: 5px!important;
-    height: 442px!important;
 }
 .titulo-catobra {
     margin-top: 7px;
@@ -35,9 +34,7 @@
     position: relative;
     top: 3px;
 }
-.bloquecont {
-    margin-top: 57px;
-}
+
 .texto-ini {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;

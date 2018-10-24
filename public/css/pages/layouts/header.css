@@ -1,17 +1,11 @@
 *{
-    font-family: 'Titillium Web'!important;
+    font-family: 'Titillium Web';
 }
 
 nav ul a:hover {
     background-color: transparent!important;
     font-family: Titillium Web;
     border-bottom: 3px solid #D8212A !important;
-}
-
-nav ul a:hover {
-    background-color: transparent!important;
-    font-family: Titillium Web;
-    /* border-bottom: 3px solid #D8212A !important; */
 }
 
 header{
@@ -22,12 +16,6 @@ header {
     z-index: 99;
 }
 
-header nav .items_header {
-
-    -webkit-transition:all 500ms ease;
-    -o-transition:all 500ms ease;
-    transition:all 500ms ease;
-}
 
 header nav .items_header {
 
@@ -116,7 +104,31 @@ nav ul a:hover {
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1180 px <<<<<<*/
 @media only screen and (max-width: 600px) {
+    header .principal {
+    height: 170px!important;
+    background-color: white;
+    font-family: 'Titillium Web';
+    display: table;
+}
 
+.header2 .principal {
+    height: 104px!important;
+    background-color: white;
+    font-family: 'Titillium Web';
+    display: table;
+}
+
+.img_logo {
+    margin-top: -17%;
+}
+.header2 .img_logo {
+    margin-top: -30px;
+    height: 130px;
+}
+.header2 .img_logo {
+    margin-top: 22px;
+    height: 74px;
+}
 }
 
 nav ul a {
