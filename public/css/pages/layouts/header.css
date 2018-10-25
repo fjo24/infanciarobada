@@ -11,6 +11,17 @@ nav ul a:hover {
 header{
     height: 170px;
 }
+nav {
+    height: 170px!important;
+    background-color: white!important;
+    font-family: arial;
+}
+
+@media only screen and (min-width: 601px){}
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    line-height: 64px;
+}
+}
 header {
     width:100%; /* Establecemos que el header abarque el 100% del documento */
     z-index: 99;
@@ -24,13 +35,13 @@ header nav .items_header {
     transition:all 500ms ease;
 }
 
-.header2 nav .items_head {
+.header2 .items_head {
     display: none;
 }
 
 .header2 {
     position: fixed;
-    height:100px;
+    height:100px!important;
 }
 
 .header2 .img_logo {
@@ -52,7 +63,7 @@ header nav .items_header {
     font-size:30px;
 }
 
-header .principal {
+nav .principal {
     height: 170px!important;
     background-color: white;
     font-family: 'Titillium Web';
@@ -105,32 +116,41 @@ nav ul a:hover {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1180 px <<<<<<*/
 @media only screen and (max-width: 600px) {
     header .principal {
-    height: 170px!important;
     background-color: white;
     font-family: 'Titillium Web';
     display: table;
 }
 
-.header2 .principal {
+.header2 {
     height: 104px!important;
     background-color: white;
     font-family: 'Titillium Web';
     display: table;
 }
 
-.img_logo {
-    margin-top: -17%;
-}
 .header2 .img_logo {
     margin-top: -30px;
     height: 130px;
 }
 .header2 .img_logo {
     margin-top: 22px;
-    height: 74px;
+    height: 86px;
 }
+
+.logo_header {
+    float: right;
+}
+
 }
 
 nav ul a {
     padding: 0 20px!important;
+}
+
+.sidenav li>a>i.material-icons {
+    color: #AA0000!important;
+}
+
+.sidenav li>a {
+    color: #AA0000!important;
 }

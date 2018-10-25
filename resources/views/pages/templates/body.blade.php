@@ -58,10 +58,10 @@ $(document).ready(function(){
             $(document).ready(function(){
 
     $(window).scroll(function(){
-        if( $(this).scrollTop() > 100 ){
-            $('header').addClass('header2');
+        if( $(this).scrollTop() > 0 ){
+            $('nav').addClass('header2');
         } else {
-            $('header').removeClass('header2');
+            $('nav').removeClass('header2');
         }
     });
 
@@ -74,6 +74,15 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
     $('.collapsible').collapsible();
 
+  });
+
+           $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
   });
     </script>
     </body>

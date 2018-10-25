@@ -114,7 +114,7 @@ aprender e informarte sobre el tema
                 </div>
                 @foreach($noticias as $noticia)
                 <div class="col l4 m4 s12">
-                    <div class="card">
+                    <div class="card" style="    margin-bottom: 20%;">
                         <div class="card-image">
                             <img src="{{ asset($noticia->imagen) }}" style="padding: 5%;height: 180px;"/>
                         </div>
